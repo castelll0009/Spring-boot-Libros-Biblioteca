@@ -42,7 +42,7 @@ public class LibroRestController {
 		return msg;
 	}
 
-	@PostMapping("/libros/adicionarLibros") 
+	@PostMapping("/libros/adicionarLibros/") 
 	public ClienteDTO create(@RequestBody ClienteDTO usuario) {
 		ClienteDTO objUsuario = null;
 		objUsuario = usuarioService.AdicionarLibro(usuario);
@@ -59,7 +59,7 @@ public class LibroRestController {
 		return objUsuario;
 	}
 
-	@DeleteMapping("/usuario/{CodigoLibro}")
+	@DeleteMapping("/eliminar/{codigo}")
 	public Boolean EliminarLibro(@PathVariable Integer codigo) {
 		Boolean bandera = false;
 		ClienteDTO usuarioActual = usuarioService.ConsultarLibro(codigo);
